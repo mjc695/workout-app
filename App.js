@@ -19,6 +19,7 @@ export default function App(props) {
       />
     );
   } else {
+    console.log('platform OS:', Platform.OS)
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
