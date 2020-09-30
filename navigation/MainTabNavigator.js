@@ -92,7 +92,7 @@ SettingsStack.path = '';
 
 // FOR NAVIGATION AT THE BOTTOM
 const tabNavigator = createBottomTabNavigator({
-  LoginStack,
+  // LoginStack,
   HomeStack,
   // LinksStack,
   SettingsStack,

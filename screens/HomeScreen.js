@@ -8,11 +8,13 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Button,
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+import LogoutButton from '../components/LogoutButton'
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   return (
     <View style={styles.container}>
       <ScrollView
@@ -31,12 +33,15 @@ export default function HomeScreen() {
 
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
-
+          <View>
+            {/* <Button title='Logout' onPress={props.logout()}></Button> */}
+            <LogoutButton props={props.navigation}></LogoutButton>
+          </View>
           <Text style={styles.getStartedText}>Get started by opening</Text>
 
           <View
             style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
+            <Button title='screens/HomeScreen.js' onPress={() => props.navigation.navigate('Auth')} />
           </View>
 
           <Text style={styles.getStartedText}>
@@ -95,6 +100,7 @@ function DevelopmentModeNotice() {
     );
   }
 }
+
 
 function handleLearnMorePress() {
   WebBrowser.openBrowserAsync(

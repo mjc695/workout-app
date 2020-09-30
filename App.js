@@ -6,6 +6,9 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import AppNavigator from './navigation/AppNavigator';
+import { Provider } from 'react-redux';
+
+import store from './store'
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -19,11 +22,14 @@ export default function App(props) {
       />
     );
   } else {
-    console.log('platform OS:', Platform.OS)
+    // console.log('platform OS:', Platform.OS)
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+        <Provider store={store}>
+          {/* providing the store */}
+          <AppNavigator />
+        </Provider>
       </View>
     );
   }
