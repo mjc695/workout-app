@@ -40,10 +40,6 @@ function LogoutButton(props) {
   )
 }
 
-LogoutButton.navigationOptions = {
-  header: null
-}
-
 const mapDispatch = dispatch => ({
   logout: dispatch(logout())
 })

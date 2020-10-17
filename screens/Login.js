@@ -50,7 +50,7 @@ export function LoginScreen(props) {
         ></TextInput>
       </View>
       <Button title='click me' onPress={handleSubmit} />
-      <Button title='Go Home' onPress={() => props.navigation.navigate('App')} />
+      {/* <Button title='Go Home' onPress={() => props.navigation.navigate('App')} /> */}
     </View >
   )
 }
